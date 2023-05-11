@@ -3,6 +3,7 @@ import './Profile.css'
 import axios from 'axios'
 import { Spinner } from 'react-activity'
 import 'react-activity/dist/library.css'
+// import { Spinner } from 'react-bootstrap'
 const Profile = () => {
   const [data, updateData] = useState()
   const getProfile = () => {
@@ -34,8 +35,8 @@ const Profile = () => {
               </div>
             </>
           ) : (
-            <div style={{justifyContent: 'center', alignItems: 'center', textAlign: 'center', display: 'flex'}}>
-              <Spinner color='#cd6948'  />
+            <div className='spinner'>
+              <center><Spinner color='#cd6948' /></center>
             </div>
             
           )

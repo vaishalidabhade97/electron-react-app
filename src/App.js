@@ -6,6 +6,7 @@ import About from './Components/About/About';
 import Navigation from './Components/Navigation/Navigation';
 import SignUp from './Components/SignUp/SignUp';
 import Profile from './Components/Profile/Profile';
+import Home from './Components/Home/Home';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Router>
         <Navigation />
         <Routes>
-          <Route path='/' exact element={<SignIn />} />
+          <Route path='/' exact element={<Home />} />
+          <Route path='/signin' element={<SignIn />} />
           <Route path='/about' element={<About />} />
           <Route path='/calculator' element={<Calculator />}/>
           <Route path='/signup' element={<SignUp />}/>

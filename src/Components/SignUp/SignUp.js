@@ -1,18 +1,18 @@
 import React from 'react'
 import './SignUp.css'
+import { Link, useNavigate } from 'react-router-dom'
 const SignUp = () => {
+   const navigate = useNavigate()
     
     const handleSubmit = () => {
-     console.info("ss")
+     navigate('/signin')
     }
-    console.log("pppp")
     return (
         <div className='container'>
           <h1>Create New User</h1>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className='form-body'>
                <div className='username'>
-                  {/* <label className='form_label' htmlFor='userName'>User Name</label><br /> */}
                   <input className='form_input' type='text' id='userName' placeholder='User Name' required/>
                </div>
                <div className='email'>
@@ -23,7 +23,12 @@ const SignUp = () => {
                </div>
             </div>
             <div className='footer'>
-                <button type='submit' className='submit' onClick={handleSubmit}>Sign Up</button>
+                <button type='submit' className='submit' >Sign Up</button>
+            </div>
+            <br />
+            <div className='footer'>
+               <span>Alreacy Existing User? </span>
+                <Link to='/signin' color='#cd6948' style={{textDecorationColor: '#cd6948', color: '#cd6948'}}>Sign In</Link>
             </div>
           </form>
         </div>

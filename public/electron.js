@@ -1,19 +1,12 @@
-const path = require('path');
-const url = require('url');
 const { app, BrowserWindow } = require('electron');
 // const isDev = require('electron-is-dev');
 
 function createWindow() {
   // Create the browser window.
-  console.log(path.join(__dirname, '../src/github-mark-white.png'), "patttt")
   const win = new BrowserWindow({
     width: 625,
     height: 624,
-    icon: path.join(__dirname, '../src/github-mark-white.ico')
-    // resizable: false
-    // webPreferences: {
-    //   nodeIntegration: true,
-    // },
+    minWidth: 400,
   });
 
    // and load the index.html of the app.
@@ -23,9 +16,10 @@ function createWindow() {
 //     protocol: 'file:',
 //     slashes: true,
 // }))
-win.loadURL('http://localhost:3000')
-win.setIcon(path.join(__dirname, '../src/github-mark-white.ico'));
-// win.loadURL('http://10.0.28.73:3000')
+// win.loadURL('http://localhost:3000')
+// win.setIcon(path.join(__dirname, '../src/github-mark-white.ico'));
+win.loadURL('https://electron-react-7e490.web.app')
+// console.log(`file://${path.join(__dirname, 'index.html')}`, "kkkk")
 //   win.loadURL(`file://${path.join(__dirname, 'index.html')}`);
 //   win.loadURL(
 //     isDev
@@ -33,7 +27,7 @@ win.setIcon(path.join(__dirname, '../src/github-mark-white.ico'));
 //       : `file://${path.join(__dirname, 'index.html')}`
 //   );
 //   // Open the DevTools.
-win.webContents.openDevTools({ mode: 'detach' });
+// win.webContents.openDevTools({ mode: 'detach' });
 //   if (isDev) {
 //     console.log('path', `file://${path.join(__dirname, 'index.html')}`);
 

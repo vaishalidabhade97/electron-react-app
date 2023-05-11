@@ -30,8 +30,8 @@
     "eject": "react-scripts eject",
     "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
     "electron": "wait-on tcp:3000 && electron .",
-    "package": "electron-builder build --mac --win -c.extraMetadata.main=build/electron.js --publish never",
-    "publish": "electron-builder build --mac --win --publish always"
+    "package": "electron-builder build --mac --win --linux -c.extraMetadata.main=build/electron.js --publish never",
+    "publish": "electron-builder build --mac --win --linux --publish always"
   },
   "eslintConfig": {
     "extends": [

@@ -1,7 +1,10 @@
 .profile {
-    display: 'flex';
-    justify-content: 'center';
-    align-items: 'center';
-    text-align: center;
-    min-height: 80px;
-  }
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+  align-content: center;
+  text-align: center;
+  min-height: 80px;
+  background-color: blue;
+}
+.spinner {justify-content: 'center'; align-items: 'center'; text-align: 'center'; display: 'flex'; padding: 30px; }
