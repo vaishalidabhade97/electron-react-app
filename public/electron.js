@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Tray, Menu, nativeImage } = require('electron');
 // const isDev = require('electron-is-dev');
 
 function createWindow() {
@@ -33,11 +33,22 @@ win.loadURL('https://electron-react-7e490.web.app')
 
 //     win.webContents.openDevTools({ mode: 'detach' });
 //   }
+let tray
+const icon = nativeImage.createFromPath('public/logo.png' )
+  tray = new Tray(icon)
+  const contextMenu = Menu.buildFromTemplate([
+    {label: 'Close', type: 'normal', click: () => {
+      
+        win.close();
+    }}
+  ])
+  tray.setToolTip('This is my application.')
+  tray.setContextMenu(contextMenu)
 }
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(createWindow);
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

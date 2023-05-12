@@ -1,10 +1,13 @@
 import React from 'react'
 import './SignUp.css'
 import { Link, useNavigate } from 'react-router-dom'
+import { writeUserData } from '../../utils/helpers'
+
 const SignUp = () => {
    const navigate = useNavigate()
     
     const handleSubmit = () => {
+   //   writeUserData("VD", "vaishali", "v@gmail.com", "v@123")
      navigate('/signin')
     }
     return (
@@ -27,7 +30,7 @@ const SignUp = () => {
             </div>
             <br />
             <div className='footer'>
-               <span>Alreacy Existing User? </span>
+               <span>Already Existing User? </span>
                 <Link to='/signin' color='#cd6948' style={{textDecorationColor: '#cd6948', color: '#cd6948'}}>Sign In</Link>
             </div>
           </form>
